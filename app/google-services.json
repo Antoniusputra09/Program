@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1069571884162",
+    "firebase_url": "https://aplikasi-siswa-f1ecb.firebaseio.com",
+    "project_id": "aplikasi-siswa-f1ecb",
+    "storage_bucket": "aplikasi-siswa-f1ecb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069571884162:android:69463ccf73c3799f",
+        "android_client_info": {
+          "package_name": "com.example.asus.program"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069571884162-qgo2v66n2htk504u10p00afffguhr7bv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asus.program",
+            "certificate_hash": "4c8da73c00365f3d04bc57be539bd3e7ac4e952c"
+          }
+        },
+        {
+          "client_id": "1069571884162-6iovfu414lt84ttih7le57rjdk20stoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsi3N0o97j7ryW8icsXCCBiNVYwoR_5vk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069571884162-6iovfu414lt84ttih7le57rjdk20stoo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

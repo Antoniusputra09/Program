@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".haldata"
+    android:background="#fff">
+
+    <LinearLayout
+        android:id="@+id/layout4.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/toolbarlayout"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout4.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout4.1">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/slank"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout4.3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout4.1"
+        android:layout_toRightOf="@id/layout4.2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Andi Surya"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="20dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout4.4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout4.3"
+        android:layout_toRightOf="@id/layout4.2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="X RPL A"
+            android:layout_marginLeft="20dp"/>
+    </RelativeLayout>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/layout4.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout4.2"
+        android:layout_marginTop="10dp"
+       >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background1">
+
+                <TextView
+                    android:id="@+id/tl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Taggal Lahir :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:id="@+id/tl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="20 Desember 2001"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/tl3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Tempat Lahir:"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl1"/>
+
+                <TextView
+                    android:id="@+id/tl4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Malang"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl2"/>
+
+
+                <TextView
+                    android:id="@+id/tl5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Nis                    :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl3"/>
+
+                <TextView
+                    android:id="@+id/tl6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="176.45.7662.287"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl4"/>
+
+
+
+                <TextView
+                    android:id="@+id/tl7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Alamat            :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl5"/>
+
+                <TextView
+                    android:id="@+id/tl8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Jl. Anggur no 14"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl6"/>
+
+
+
+                <TextView
+                    android:id="@+id/tl9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="No Hp              :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl7"/>
+
+                <TextView
+                    android:id="@+id/tl10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="082245733804"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl8"/>
+
+
+
+                <TextView
+                    android:id="@+id/tl11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Email               :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl9"/>
+
+                <TextView
+                    android:id="@+id/tl12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="andisur13@gmail.com"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl10"/>
+
+                <TextView
+                    android:id="@+id/tl13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Nama Ayah   :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl11"/>
+
+                <TextView
+                    android:id="@+id/tl14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Slamet Hariadi"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl12"/>
+
+
+                <TextView
+                    android:id="@+id/tl15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Telp Ayah       :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl13"/>
+
+                <TextView
+                    android:id="@+id/tl16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="087736252698"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl14"/>
+
+
+                <TextView
+                    android:id="@+id/tl17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Nama Ibu        :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl15"/>
+
+                <TextView
+                    android:id="@+id/tl18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Titik Erlina"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl16"/>
+
+
+                <TextView
+                    android:id="@+id/tl19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Telp Ibu           :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl17"/>
+
+                <TextView
+                    android:id="@+id/tl20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="085632197300"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl18"/>
+
+                <TextView
+                    android:id="@+id/tl21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Nama Wali     :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl19"/>
+
+                <TextView
+                    android:id="@+id/tl22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="-"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl20"/>
+
+
+                <TextView
+                    android:id="@+id/tl23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Telp Wali        :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl21"/>
+
+                <TextView
+                    android:id="@+id/tl24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="-"
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl22"/>
+
+
+                <TextView
+                    android:id="@+id/tl25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Catatan          :"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@id/tl23"/>
+
+                <TextView
+                    android:id="@+id/tl26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000"
+                    android:text="Jangan Banya omong ya, perbanyak mengerjakan tugas."
+                    android:layout_toRightOf="@id/tl1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/tl24"/>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
