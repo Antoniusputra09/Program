@@ -7,9 +7,6 @@
     tools:context=".haldaftar"
     android:background="#FFF">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
 
         <RelativeLayout
             android:id="@+id/layout2.1"
@@ -23,103 +20,377 @@
                 android:layout_marginTop="0dp"
                 android:src="@drawable/header" />
         </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/layout2.6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout2.1"
-            android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/daftarusername"
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout2.1">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Username"
-                android:textColorHint="#000000"
-                android:textColor="#030303"/>
-        </RelativeLayout>
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/layout2.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/daftarusername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Username"
+                        android:textColorHint="#000000"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/layout2.2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout2.6"
-            android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:id="@+id/layout2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.6"
+                    android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/daftaremail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Email"
-                android:textColorHint="#000000"
-                android:textColor="#030303"
-                android:inputType="textEmailAddress"/>
-        </RelativeLayout>
+                    <EditText
+                        android:id="@+id/daftaremail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Email"
+                        android:textColorHint="#000000"
+                        android:textColor="#030303"
+                        android:inputType="textEmailAddress"/>
+                </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layout2.3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layout2.2"
-            android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:id="@+id/layout2.3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout2.2"
+                    android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/daftarpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Password"
-                android:textColorHint="#030303"
-                android:inputType="textPassword"
-                android:textColor="#030303" />
+                    <EditText
+                        android:id="@+id/daftarpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Password"
+                        android:textColorHint="#030303"
+                        android:inputType="textPassword"
+                        android:textColor="#030303" />
 
-        </RelativeLayout>
+                </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layout2.4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout2.3"
-            android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:id="@+id/layout2.4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.3"
+                    android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/ulangpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Ulangi Password"
-                android:textColorHint="#030303"
-                android:inputType="textPassword"
-                android:textColor="#030303"/>
-        </RelativeLayout>
+                    <EditText
+                        android:id="@+id/ulangpass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Ulangi Password"
+                        android:textColorHint="#030303"
+                        android:inputType="textPassword"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layout2.5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout2.4"
-            android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:id="@+id/layout2.7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.4"
+                    android:layout_marginTop="10dp">
 
-            <Button
-                android:id="@+id/tomboldaftar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/tombol"
-                android:text="daftar"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"/>
-        </RelativeLayout>
+                    <EditText
+                        android:id="@+id/kelas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Kelas/Sekolah"
+                        android:textColorHint="#030303"
+                        android:inputType="textPassword"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
 
 
+                <RelativeLayout
+                    android:id="@+id/layout2.8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.7"
+                    android:layout_marginTop="10dp">
 
-    </ScrollView>
+                    <EditText
+                        android:id="@+id/ttl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Tanggal Lahir"
+                        android:textColorHint="#030303"
+                        android:inputType="datetime"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout2.9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.8"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/tempat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Tempat Lahir"
+                        android:textColorHint="#030303"
+                        android:inputType="text"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout2.10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.9"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/Nis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Nis"
+                        android:textColorHint="#030303"
+                        android:inputType="number"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.10"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/alamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Alamat"
+                        android:textColorHint="#030303"
+                        android:inputType="text"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.11"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/nohp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="No Hp"
+                        android:textColorHint="#030303"
+                        android:inputType="phone"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.12"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/namaayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Nama Ayah"
+                        android:textColorHint="#030303"
+                        android:inputType="text"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.13"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/noayah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Telp Ayah"
+                        android:textColorHint="#030303"
+                        android:inputType="phone"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.14"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/namaibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Nama Ibu"
+                        android:textColorHint="#030303"
+                        android:inputType="text"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.15"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/noibu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Telp Ibu"
+                        android:textColorHint="#030303"
+                        android:inputType="phone"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.16"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/namawali"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Nama Wali"
+                        android:textColorHint="#030303"
+                        android:inputType="text"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.17"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/nowali"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Telp Wali"
+                        android:textColorHint="#030303"
+                        android:inputType="phone"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.18"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/catatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:hint="Catatan"
+                        android:textColorHint="#030303"
+                        android:inputType="textMultiLine"
+                        android:textColor="#030303"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout2.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout2.19"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/tomboldaftar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tombol"
+                        android:text="daftar"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
 
 
 </RelativeLayout>
