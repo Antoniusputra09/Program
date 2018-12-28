@@ -21,8 +21,12 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class halnavigation extends AppCompatActivity {
    // Toolbar tb ;
@@ -32,10 +36,11 @@ public class halnavigation extends AppCompatActivity {
     private ActionBarDrawerToggle swipe;
     RecyclerView.Adapter adapter;
    // NavigationView navigationView;
-    TextView textView;
+    TextView nama1;
     ImageView img1;
     CardView cv, cv2, cv3, cv4;
     private FirebaseAuth mAuth;
+    FirebaseUser fuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class halnavigation extends AppCompatActivity {
         cv3 = (CardView) findViewById(R.id.card13);
         cv4 = (CardView) findViewById(R.id.card4);
         img1 = (ImageView) findViewById(R.id.tombolchat);
+        nama1 = (TextView) findViewById(R.id.nama1);
         //textView = (TextView) findViewById(R.id.textdata);
         //recyle.setHasFixedSize(true);
         //recyle.setLayoutManager(new LinearLayoutManager(this));
@@ -77,6 +83,21 @@ public class halnavigation extends AppCompatActivity {
                 }
 
                 return true;
+            }
+        });
+
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                nama1.setText(user.getUsername());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
