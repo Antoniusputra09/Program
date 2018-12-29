@@ -36,7 +36,7 @@ public class halnavigation extends AppCompatActivity {
     private ActionBarDrawerToggle swipe;
     RecyclerView.Adapter adapter;
    // NavigationView navigationView;
-    TextView nama1;
+    TextView nama1, kelas1;
     ImageView img1;
     CardView cv, cv2, cv3, cv4;
     private FirebaseAuth mAuth;
@@ -55,6 +55,7 @@ public class halnavigation extends AppCompatActivity {
         cv4 = (CardView) findViewById(R.id.card4);
         img1 = (ImageView) findViewById(R.id.tombolchat);
         nama1 = (TextView) findViewById(R.id.nama1);
+        kelas1 = (TextView) findViewById(R.id.kelas1);
         //textView = (TextView) findViewById(R.id.textdata);
         //recyle.setHasFixedSize(true);
         //recyle.setLayoutManager(new LinearLayoutManager(this));
@@ -93,6 +94,7 @@ public class halnavigation extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 nama1.setText(user.getUsername());
+                kelas1.setText(user.getKelas());
             }
 
             @Override
