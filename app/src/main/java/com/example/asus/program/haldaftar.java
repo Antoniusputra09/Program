@@ -38,7 +38,7 @@ public class haldaftar extends AppCompatActivity {
     EditText edit1, edit2, edit3, edit4, kelas, ttl, tempat, Nis, alamat,
             nohp, namaayah, noayah, namaibu, noibu, namawali, nowali, catatan;
     Button btn;
-    Uri imguri;
+
     ImageView img;
     FirebaseAuth auth;
     DatabaseReference databaseReference;
@@ -66,21 +66,13 @@ public class haldaftar extends AppCompatActivity {
         nowali = (EditText) findViewById(R.id.nowali);
         catatan = (EditText) findViewById(R.id.catatan);
 
-        img = (ImageView) findViewById(R.id.uploadfoto);
         btn= (Button) findViewById(R.id.tomboldaftar);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Harap Tunggu");
 
         auth = FirebaseAuth.getInstance();
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                gambar();
-
-            }
-        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,10 +106,10 @@ public class haldaftar extends AppCompatActivity {
                 else{
                     daftar(txt_username, txt_email, txt_password, txt_kelas, txt_ttl, txt_tempat, txt_Nis, txt_alamat, txt_nohp,
                             txt_namaayah, txt_noayah, txt_namaibu, txt_noibu, txt_namawali, txt_nowali, txt_catatan);
-                    uploadimage();
+
 
                     progressDialog.dismiss();
-                    startActivity(new Intent(haldaftar.this,MainActivity.class));
+                    startActivity(new Intent(haldaftar.this,halmasuk.class));
                 }
 
             }
@@ -163,7 +155,7 @@ public class haldaftar extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Intent intent = new Intent(haldaftar.this,MainActivity.class);
+                                        Intent intent = new Intent(haldaftar.this,halmasuk.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();
@@ -178,59 +170,6 @@ public class haldaftar extends AppCompatActivity {
     }
 
 
-    private  void  gambar(){
-
-        CropImage.activity()
-                .setGuidelines(CropImageView.Guidelines.ON)
-                .setAutoZoomEnabled(true)
-                .setCropShape(CropImageView.CropShape.RECTANGLE)
-                .start(haldaftar.this);
-    }
-
-    private  void uploadimage(){
-        String txt_username = edit4.getText().toString();
-
-        final StorageReference audioRef = FirebaseStorage.getInstance().getReference(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Images/*").child("Fotopp.jpg").child(txt_username);
-
-        audioRef.putFile(imguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                audioRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        FirebaseUser firebaseUser = auth.getCurrentUser();
-                        assert firebaseUser !=null;
-                        String userid = firebaseUser.getUid();
-
-                        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
-
-                        databaseReference.child("imageUrl").setValue(uri.toString());
-
-                        Toast.makeText(haldaftar.this, "upload success", Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if(resultCode == RESULT_OK){
-                Uri uri = result.getUri();
-                imguri = uri;
-                img.setImageURI(uri);
-            }else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
-                Exception error = result.getError();
-
-                if(BuildConfig.DEBUG) error.printStackTrace();
-            }
-        }
-    }
 
 }
 

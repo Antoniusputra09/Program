@@ -26,7 +26,8 @@
         <activity android:name=".halnilai" />
         <activity android:name=".halspp" />
         <activity android:name=".viewpager" />
-        <activity android:name=".halmasuk"></activity>
+        <activity android:name=".halmasuk" />
+        <activity android:name=".halfoto"></activity>
     </application>
 
 </manifest>
