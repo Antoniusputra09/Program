@@ -2,6 +2,7 @@ package com.example.asus.program;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,16 +11,24 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.images.ImageRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
 
@@ -29,6 +38,8 @@ public class haldaftar extends AppCompatActivity {
     EditText edit1, edit2, edit3, edit4, kelas, ttl, tempat, Nis, alamat,
             nohp, namaayah, noayah, namaibu, noibu, namawali, nowali, catatan;
     Button btn;
+    Uri imguri;
+    ImageView img;
     FirebaseAuth auth;
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
@@ -55,12 +66,21 @@ public class haldaftar extends AppCompatActivity {
         nowali = (EditText) findViewById(R.id.nowali);
         catatan = (EditText) findViewById(R.id.catatan);
 
+        img = (ImageView) findViewById(R.id.uploadfoto);
         btn= (Button) findViewById(R.id.tomboldaftar);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Harap Tunggu");
 
         auth = FirebaseAuth.getInstance();
 
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                gambar();
+
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +114,7 @@ public class haldaftar extends AppCompatActivity {
                 else{
                     daftar(txt_username, txt_email, txt_password, txt_kelas, txt_ttl, txt_tempat, txt_Nis, txt_alamat, txt_nohp,
                             txt_namaayah, txt_noayah, txt_namaibu, txt_noibu, txt_namawali, txt_nowali, txt_catatan);
+                    uploadimage();
 
                     progressDialog.dismiss();
                     startActivity(new Intent(haldaftar.this,MainActivity.class));
@@ -156,100 +177,60 @@ public class haldaftar extends AppCompatActivity {
                 });
     }
 
-    /*private void daftar(){
-        btn.setOnClickListener(new View.OnClickListener() {
+
+    private  void  gambar(){
+
+        CropImage.activity()
+                .setGuidelines(CropImageView.Guidelines.ON)
+                .setAutoZoomEnabled(true)
+                .setCropShape(CropImageView.CropShape.RECTANGLE)
+                .start(haldaftar.this);
+    }
+
+    private  void uploadimage(){
+        String txt_username = edit4.getText().toString();
+
+        final StorageReference audioRef = FirebaseStorage.getInstance().getReference(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Images/*").child("Fotopp.jpg").child(txt_username);
+
+        audioRef.putFile(imguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onClick(View view) {
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                progressDialog.show();
-                awal();
+                audioRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        FirebaseUser firebaseUser = auth.getCurrentUser();
+                        assert firebaseUser !=null;
+                        String userid = firebaseUser.getUid();
 
+                        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+
+                        databaseReference.child("imageUrl").setValue(uri.toString());
+
+                        Toast.makeText(haldaftar.this, "upload success", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }
 
-    private void awal(){
 
-        email = edit1.getText().toString().trim();
-        pass1 = edit2.getText().toString().trim();
-        pass2 = edit3.getText().toString().trim();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if(resultCode == RESULT_OK){
+                Uri uri = result.getUri();
+                imguri = uri;
+                img.setImageURI(uri);
+            }else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
+                Exception error = result.getError();
 
-        if(!syarat()){
-
-            progressDialog.dismiss();
-            Toast.makeText(this, "Daftar gagal", Toast.LENGTH_SHORT).show();
-        }
-        else {
-
-            sukses();
-        }
-
-    }
-
-    private void sukses(){
-
-        final FirebaseUser user = auth.getCurrentUser();
-        auth.createUserWithEmailAndPassword(email, pass1)
-                .addOnCompleteListener(haldaftar.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        Toast.makeText(haldaftar.this, "Tunggu", Toast.LENGTH_SHORT).show();
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(haldaftar.this, "Daftar gagal" + task.getException(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(haldaftar.this, "Cek Email Anda", Toast.LENGTH_SHORT).show();
-                                        try {
-                                            Thread.sleep(2000);
-                                            startActivity(new Intent(haldaftar.this, MainActivity.class));
-                                            finish();
-                                        } catch (Exception e) {
-                                        }
-                                    } else {
-                                        Toast.makeText(haldaftar.this,"Berhasil", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(haldaftar.this, "Email Tidak dapat diverifikasi", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
-                    }
-                });
-
-    }
-
-    private boolean syarat(){
-
-        boolean benar = true;
-        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            progressDialog.dismiss();
-            Toast.makeText(getApplicationContext(), "Masukkan Email yang benar", Toast.LENGTH_SHORT).show();
-            benar = false;
-
-            if (pass1.isEmpty() && pass2.isEmpty()) {
-                progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), "Isi password!", Toast.LENGTH_SHORT).show();
-                benar = false;
+                if(BuildConfig.DEBUG) error.printStackTrace();
             }
-            if (!pass2.equals(pass1)) {
-                progressDialog.dismiss();
-                Toast.makeText(getApplicationContext(), "Password tak sama", Toast.LENGTH_SHORT).show();
-                benar = false;
-            }
-            return benar;
         }
-
-        return benar;
     }
-
-*/
 
 }
 
