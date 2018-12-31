@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class halnilai extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class halnilai extends AppCompatActivity {
         setContentView(R.layout.activity_halnilai);
         recyle = (RecyclerView) findViewById(R.id.rcynilai);
         recyle.setHasFixedSize(true);
-        recyle.setLayoutManager(new LinearLayoutManager(this));
+        recyle.setLayoutManager(new LinearLayoutManager(halnilai.this));
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -68,15 +69,16 @@ public class halnilai extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         fuser = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
-
-        FirebaseRecyclerAdapter<User, halnilai.ViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<User, halnilai.ViewHolder>(User.class,
+      // Query databaseReference = FirebaseDatabase.getInstance().getReference("Nilai").orderByChild("id").startAt(fuser.getUid()).endAt(fuser.getUid() + "\uf8ff");
+        reference = FirebaseDatabase.getInstance().getReference("Nilai");
+        FirebaseRecyclerAdapter<Nilai, halnilai.ViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Nilai, halnilai.ViewHolder>
+                (Nilai.class,
                 R.layout.controlnilai, halnilai.
                 ViewHolder.class, reference) {
             @Override
-            protected void populateViewHolder(halnilai.ViewHolder viewHolder, User model, int position) {
-                viewHolder.setNama(model.getNamaayah());
-                viewHolder.setNilai(model.getAgustus());
+            protected void populateViewHolder(halnilai.ViewHolder viewHolder, Nilai model, int position) {
+                viewHolder.setNama(model.getNama());
+                viewHolder.setNilai(model.getNilai());
 
             }
         };
