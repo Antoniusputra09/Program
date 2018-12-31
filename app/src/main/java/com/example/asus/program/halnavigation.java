@@ -32,12 +32,11 @@ import com.google.firebase.database.ValueEventListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class halnavigation extends AppCompatActivity {
-   // Toolbar tb ;
+
     RecyclerView recyle;
     DatabaseReference databaseReference;
     ActionBarDrawerToggle swipe;
     RecyclerView.Adapter adapter;
-   // NavigationView navigationView;
     TextView nama1, kelas1;
     ImageView img1;
     CardView cv, cv2, cv3, cv4;
