@@ -13,103 +13,376 @@
         android:layout_height="250dp"
         android:background="#f637bfbd">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#666666"
-            android:textSize="20dp"
-            android:text="Pantau Pembayaran SPP"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:layout_marginTop="5dp"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/dpspp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/boy1"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="#666666"
-            android:text="Andi Surya"
-            android:layout_below="@id/dpspp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout7.2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/layout7.1">
-
-        <RelativeLayout
-            android:id="@+id/layout7.2.1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true">
-
-        </RelativeLayout>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardspp1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:cardCornerRadius="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toLeftOf="@id/layout7.2.1"
-            android:layout_marginRight="30dp">
-
-
-                <TextView
-                    android:id="@+id/ketbln1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:textColor="#b60000"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Januari"
-                    android:layout_gravity="center"/>
-
-
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardspp2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:cardCornerRadius="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/layout7.2.1"
-            android:layout_marginLeft="30dp">
-
-
             <TextView
-                android:id="@+id/ketbln2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:textColor="#1fec10"
-                android:fontFamily="sans-serif-medium"
-                android:text="Februari"
-                android:layout_gravity="center"/>
+                android:textColor="#666666"
+                android:textSize="20dp"
+                android:text="Pantau Pembayaran SPP"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+                <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:layout_marginTop="5dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dpspp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/boy1"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/username_spp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="#666666"
+                android:text="Andi Surya"
+                android:layout_below="@id/dpspp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+
+         </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/layout7.2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout7.1">
 
 
-        </android.support.v7.widget.CardView>
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
 
-    </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bacground2">
+
+
+                      <RelativeLayout
+                        android:id="@+id/layout7.2.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                    </RelativeLayout>
+
+
+
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp1"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp">
+
+
+                        <TextView
+                            android:id="@+id/ketbln1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Januari"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp2"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp">
+
+
+                        <TextView
+                            android:id="@+id/ketbln2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Februari"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp3"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp"
+                        android:layout_below="@id/cardspp1">
+
+
+                        <TextView
+                            android:id="@+id/ketbln3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Maret"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp4"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_below="@id/cardspp2">
+
+
+                        <TextView
+                            android:id="@+id/ketbln4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="April"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp5"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp"
+                        android:layout_below="@id/cardspp3">
+
+
+                        <TextView
+                            android:id="@+id/ketbln5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Mei"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp6"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_below="@id/cardspp4">
+
+
+                        <TextView
+                            android:id="@+id/ketbln6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Juni"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp7"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp"
+                        android:layout_below="@id/cardspp5">
+
+
+                        <TextView
+                            android:id="@+id/ketbln7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Juli"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp8"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_below="@id/cardspp6">
+
+
+                        <TextView
+                            android:id="@+id/ketbln8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Agustus"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp9"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp"
+                        android:layout_below="@id/cardspp7">
+
+
+                        <TextView
+                            android:id="@+id/ketbln9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="September"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp10"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_below="@id/cardspp8">
+
+
+                        <TextView
+                            android:id="@+id/ketbln10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Oktober"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp11"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toLeftOf="@id/layout7.2.1"
+                        android:layout_marginRight="30dp"
+                        android:layout_below="@id/cardspp9">
+
+
+                        <TextView
+                            android:id="@+id/ketbln11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#b60000"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="November"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardspp12"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/layout7.2.1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_below="@id/cardspp10">
+
+
+                        <TextView
+                            android:id="@+id/ketbln12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="#1fec10"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Desember"
+                            android:layout_gravity="center"/>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+
+                </RelativeLayout>
+
+         </ScrollView>
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

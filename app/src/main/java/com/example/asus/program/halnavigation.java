@@ -177,6 +177,14 @@ public class halnavigation extends AppCompatActivity {
                 startActivity(new Intent(halnavigation.this,MainActivity.class));
             }
         });
+
+        cv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(halnavigation.this,halspp.class));
+            }
+        });
     }
 
 
