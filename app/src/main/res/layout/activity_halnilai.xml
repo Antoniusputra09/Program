@@ -52,38 +52,13 @@
         android:layout_below="@id/tollbar3"
         android:layout_marginTop="10dp">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcynilai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:text=" UH Bahasa Indonesia: 90"
-            android:textSize="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"/>
+        </android.support.v7.widget.RecyclerView>
 
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:text=" UH Matematika: 82"
-            android:textSize="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/tv1"/>
-
-        <TextView
-            android:id="@+id/tv3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000"
-            android:text=" Tes Bahasa Inggris: 82"
-            android:textSize="20dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/tv2"/>
 
     </RelativeLayout>
 
