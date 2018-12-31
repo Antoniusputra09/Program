@@ -22,6 +22,17 @@ public class User {
     private String tempat;
     private String ttl;
     private String januari;
+    private String februari;
+    private String maret;
+    private String april;
+    private String mei;
+    private String juni;
+    private String juli;
+    private String agustus;
+    private String september;
+    private String oktober;
+    private String november;
+    private String desember;
 
 
     public User(String id, String username, String imageUrl, String alamat, String catatan,
@@ -46,13 +57,114 @@ public class User {
         this.ttl = ttl;
     }
 
-    public User(String januari) {
+    public User(String id, String januari, String februari, String maret, String april, String mei, String juni, String juli, String agustus,
+                String september, String oktober, String november, String desember) {
+        this.id = id;
         this.januari = januari;
+        this.februari = februari;
+        this.maret = maret;
+        this.april = april;
+        this.mei = mei;
+        this.juni = juni;
+        this.juli = juli;
+        this.agustus = agustus;
+        this.september = september;
+        this.oktober = oktober;
+        this.november = november;
+        this.desember = desember;
     }
 
     public User() {
     }
 
+
+    public String getFebruari() {
+        return februari;
+    }
+
+    public void setFebruari(String februari) {
+        this.februari = februari;
+    }
+
+    public String getMaret() {
+        return maret;
+    }
+
+    public void setMaret(String maret) {
+        this.maret = maret;
+    }
+
+    public String getApril() {
+        return april;
+    }
+
+    public void setApril(String april) {
+        this.april = april;
+    }
+
+    public String getMei() {
+        return mei;
+    }
+
+    public void setMei(String mei) {
+        this.mei = mei;
+    }
+
+    public String getJuni() {
+        return juni;
+    }
+
+    public void setJuni(String juni) {
+        this.juni = juni;
+    }
+
+    public String getJuli() {
+        return juli;
+    }
+
+    public void setJuli(String juli) {
+        this.juli = juli;
+    }
+
+    public String getAgustus() {
+        return agustus;
+    }
+
+    public void setAgustus(String agustus) {
+        this.agustus = agustus;
+    }
+
+    public String getSeptember() {
+        return september;
+    }
+
+    public void setSeptember(String september) {
+        this.september = september;
+    }
+
+    public String getOktober() {
+        return oktober;
+    }
+
+    public void setOktober(String oktober) {
+        this.oktober = oktober;
+    }
+
+    public String getNovember() {
+        return november;
+    }
+
+    public void setNovember(String november) {
+        this.november = november;
+    }
+
+    public String getDesember() {
+        return desember;
+    }
+
+    public void setDesember(String desember) {
+        this.desember = desember;
+    }
 
     public String getJanuari() {
         return januari;

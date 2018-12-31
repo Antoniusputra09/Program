@@ -117,7 +117,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="Februari"
                             android:layout_gravity="center"/>
@@ -168,7 +168,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="April"
                             android:layout_gravity="center"/>
@@ -218,7 +218,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="Juni"
                             android:layout_gravity="center"/>
@@ -268,7 +268,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="Agustus"
                             android:layout_gravity="center"/>
@@ -319,7 +319,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="Oktober"
                             android:layout_gravity="center"/>
@@ -369,7 +369,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="18dp"
-                            android:textColor="#1fec10"
+                            android:textColor="#b60000"
                             android:fontFamily="sans-serif-medium"
                             android:text="Desember"
                             android:layout_gravity="center"/>
