@@ -21,6 +21,7 @@ public class User {
     private String nowali;
     private String tempat;
     private String ttl;
+    private String januari;
 
 
     public User(String id, String username, String imageUrl, String alamat, String catatan,
@@ -45,7 +46,20 @@ public class User {
         this.ttl = ttl;
     }
 
+    public User(String januari) {
+        this.januari = januari;
+    }
+
     public User() {
+    }
+
+
+    public String getJanuari() {
+        return januari;
+    }
+
+    public void setJanuari(String januari) {
+        this.januari = januari;
     }
 
     public String getId() {
