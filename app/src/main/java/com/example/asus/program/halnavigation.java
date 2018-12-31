@@ -35,8 +35,7 @@ public class halnavigation extends AppCompatActivity {
    // Toolbar tb ;
     RecyclerView recyle;
     DatabaseReference databaseReference;
-   // DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle swipe;
+    ActionBarDrawerToggle swipe;
     RecyclerView.Adapter adapter;
    // NavigationView navigationView;
     TextView nama1, kelas1;
@@ -116,8 +115,6 @@ public class halnavigation extends AppCompatActivity {
 
 
         pindah();
-
-
 
 
     }
