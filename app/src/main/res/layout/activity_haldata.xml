@@ -28,6 +28,7 @@
         android:layout_below="@id/layout4.1">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/fotopp2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"

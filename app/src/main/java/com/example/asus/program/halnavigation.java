@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +28,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class halnavigation extends AppCompatActivity {
    // Toolbar tb ;
@@ -95,6 +98,14 @@ public class halnavigation extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 nama1.setText(user.getUsername());
                 kelas1.setText(user.getKelas());
+                String url = user.getImageUrl();
+
+
+                CircleImageView gambar = findViewById(R.id.fotopp1);
+                Glide.with(gambar.getContext())
+                        .load(url)
+                        .into(gambar);
+
             }
 
             @Override
