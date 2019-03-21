@@ -6,7 +6,15 @@
     android:background="@drawable/bacground2"
     tools:context=".UserFragment">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Cari.."
+        android:id="@+id/cariuser"/>
+
     <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/cariuser"
         android:id="@+id/rcyuserchat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

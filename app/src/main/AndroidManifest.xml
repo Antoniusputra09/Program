@@ -27,7 +27,8 @@
         <activity android:name=".halspp" />
         <activity android:name=".viewpager" />
         <activity android:name=".halmasuk" />
-        <activity android:name=".halfoto"></activity>
+        <activity android:name=".halfoto" />
+        <activity android:name=".coba_crud"></activity>
     </application>
 
 </manifest>

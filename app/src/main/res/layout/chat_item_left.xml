@@ -22,4 +22,11 @@
         android:padding="8dp"
         android:textSize="15sp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tampilstt"
+        android:visibility="gone"
+        android:layout_below="@id/tampil_pesan" />
+
 </RelativeLayout>

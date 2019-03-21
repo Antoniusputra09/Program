@@ -65,6 +65,18 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHoder> {
             Glide.with(mContext).load(imageurl).into(holder.profile_image);
         }
 
+        if (position == chatList.size() -1){
+            if (chat.getIsseen()){
+                holder.txt_seen.setText("DiWoco");
+            }else{
+                holder.txt_seen.setText("GakDiWoco");
+            }
+
+        }else
+        {
+            holder.txt_seen.setVisibility(View.GONE);
+        }
+
 
     }
 
@@ -77,11 +89,14 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHoder> {
 
         public TextView tampil_pesan;
         public ImageView profile_image;
+        public  TextView txt_seen;
+
         public ViewHoder(View itemView) {
             super(itemView);
 
             tampil_pesan = itemView.findViewById(R.id.tampil_pesan);
             profile_image = itemView.findViewById(R.id.ppchat);
+            txt_seen = itemView.findViewById(R.id.tampilstt);
         }
     }
 

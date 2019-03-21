@@ -33,11 +33,12 @@ public class User {
     private String oktober;
     private String november;
     private String desember;
+    private String status;
 
 
     public User(String id, String username, String imageUrl, String alamat, String catatan,
                 String email, String kelas, String namaayah, String namaibu, String namawali,
-                String nis, String noayah, String nohp, String noibu, String nowali, String tempat, String ttl) {
+                String nis, String noayah, String nohp, String noibu, String nowali, String tempat, String ttl, String status) {
         this.id = id;
         this.username = username;
         this.imageUrl = imageUrl;
@@ -55,10 +56,11 @@ public class User {
         this.nowali = nowali;
         this.tempat = tempat;
         this.ttl = ttl;
+        this.status = status;
     }
 
     public User(String id, String januari, String februari, String maret, String april, String mei, String juni, String juli, String agustus,
-                String september, String oktober, String november, String desember) {
+                String september, String oktober, String november, String desember, String status) {
         this.id = id;
         this.januari = januari;
         this.februari = februari;
@@ -72,6 +74,7 @@ public class User {
         this.oktober = oktober;
         this.november = november;
         this.desember = desember;
+        this.status = status;
     }
 
     public User() {
@@ -308,5 +311,13 @@ public class User {
 
     public void setTtl(String ttl) {
         this.ttl = ttl;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

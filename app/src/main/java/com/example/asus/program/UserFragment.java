@@ -6,9 +6,12 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -19,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -32,6 +36,8 @@ public class UserFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<User> user_itemList;
     private DatabaseReference databaseReference;
+
+    EditText cari;
 
 
     @Override
@@ -47,8 +53,62 @@ public class UserFragment extends Fragment {
         user_itemList = new ArrayList<>();
         //readuser();
 
+        cari = (EditText) view.findViewById(R.id.cariuser);
+
+        cari.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                cariUser(charSequence.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
         return view;
     }
+
+    private void cariUser(String s) {
+
+    final FirebaseUser fuser  = FirebaseAuth.getInstance().getCurrentUser();
+        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("username").startAt(s).endAt(s+"\uf8ff");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                user_itemList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    User user = snapshot.getValue(User.class);
+
+
+                    assert user != null;
+                    assert fuser != null;
+                    if (!user.getId().equals(fuser.getUid())){
+                        user_itemList.add(user);
+                    }
+                }
+
+                userAdapter = new userAdapter(getContext(),user_itemList, false);
+                recyclerView.setAdapter(userAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         View mView;
@@ -68,6 +128,11 @@ public class UserFragment extends Fragment {
                     .load(fotopp)
                     .into(gambar);
         }
+
+        public void setStatus(String status){
+            TextView txt_status = mView.findViewById(R.id.textstt);
+            txt_status.setText(status);
+        }
     }
 
     @Override
@@ -86,6 +151,7 @@ public class UserFragment extends Fragment {
                 final String postkey = getRef(position).getKey();
                 viewHolder.setImageUrl(model.getImageUrl());
                 viewHolder.setUsername(model.getUsername());
+                viewHolder.setStatus(model.getStatus());
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override

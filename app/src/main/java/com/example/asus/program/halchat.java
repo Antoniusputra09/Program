@@ -43,6 +43,8 @@ public class halchat extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+    ValueEventListener seenListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +68,7 @@ public class halchat extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(halchat.this, viewpager.class));
+                startActivity(new Intent(halchat.this, viewpager.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 finish();
             }
         });
@@ -108,7 +110,34 @@ public class halchat extends AppCompatActivity {
             }
         });
 
+        kirimpesan(userid);
+
     }
+
+    private void kirimpesan (final String userid){
+        databaseReference = FirebaseDatabase.getInstance().getReference("Chats");
+        seenListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+
+                    Chat chat = snapshot.getValue(Chat.class);
+                    if (chat.getReciver().equals(fuser.getUid()) && chat.getSender().equals(userid)){
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("isseen", true);
+                        snapshot.getRef().updateChildren(hashMap);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 
     private void kirimpesan(String sender, String reciver, String message){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
@@ -118,6 +147,7 @@ public class halchat extends AppCompatActivity {
         hashMap.put("sender", sender);
         hashMap.put("reciver", reciver);
         hashMap.put("message", message);
+        hashMap.put("isseen", false);
 
         reference.child("Chats").push().setValue(hashMap);
     }
@@ -149,4 +179,27 @@ public class halchat extends AppCompatActivity {
             }
         });
     }
+
+    private void status (String status){
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("status", status );
+
+        databaseReference.updateChildren(hashMap);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        databaseReference.removeEventListener(seenListener);
+        status("offline");
+    }
+
 }

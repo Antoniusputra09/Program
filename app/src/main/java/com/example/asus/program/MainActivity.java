@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser!=null){
-            startActivity(new Intent(MainActivity.this,halnavigation.class));
+            startActivity(new Intent(MainActivity.this,halnavigation
+                    .class));
         }
 
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                    if (task.isSuccessful())
                                    {
 
-                                       Intent intent = new Intent(MainActivity.this, halnavigation.class);
+                                       Intent intent = new Intent(MainActivity.this, viewpager.class);
                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                        progressDialog.dismiss();
                                        startActivity(intent);
